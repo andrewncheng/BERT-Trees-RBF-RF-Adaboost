@@ -10,6 +10,8 @@ from sklearn.model_selection import KFold, cross_validate,cross_val_predict,cros
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_files
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Random_Forest():
     def __init__(self, X = None, y = None, X_train = None, y_train = None, X_test = None, y_test = None):
@@ -21,9 +23,11 @@ class Random_Forest():
         self.y_test = y_test
 
     def set_X_y(self, filepath):
+        reviews_train = load_files("aclImdb/train")
+        self.X, self.y = reviews_train.data, reviews_train.target
+        self.X = [doc.replace(b"<br />", b" ") for doc in self.X]
 
-
-        self.X, self.y =
+        TfidfVectorizer(min_df=5, norm='l2')
 
    #  As in decision tree, can use the best hyperparameters (criterion, alpha (can tune if time), max_features)
     # and bootstrap the input values to comment on variance
