@@ -17,13 +17,15 @@ class Random_Forest():
         self.y = y
         self.X_train =  X_train
         self.y_train = y_train
-        self.X_train = X_train
-        self.y_train = y_train
+        self.X_test = X_test
+        self.y_test = y_test
 
     def set_X_y(self, filepath):
+
+
         self.X, self.y =
 
-    # As in decision tree, can use the best hyperparameters (criterion, alpha (can tune if time), max_features)
+   #  As in decision tree, can use the best hyperparameters (criterion, alpha (can tune if time), max_features)
     # and bootstrap the input values to comment on variance
     # and use CV to comment on accuracy
     def model_and_plot_oob_error(self, ccp_alpha = 0.15):
