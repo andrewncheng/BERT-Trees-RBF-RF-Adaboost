@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4624bef5-bf01-43f0-b70b-3407b454d3a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Decision_Tree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Random_Forest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/comp551a2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/comp551a2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMBD_Binary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/IMBD_Binary.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Random_Forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random_Forest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YoZBWpwYinYCGGL0emxn82mtg4" />
@@ -31,8 +36,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,14 +65,24 @@
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="389" y="145" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583611846927">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="389" y="145" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1583611846927" />
-    <state x="150" y="0" key="SettingsEditor" timestamp="1583611908710">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="150" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583611908710" />
+    <state x="389" y="145" key="#com.intellij.fileTypes.FileTypeChooser" />
+    <state x="389" y="145" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" />
+    <state x="150" y="0" key="SettingsEditor" />
+    <state x="150" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" />
   </component>
 </project>
