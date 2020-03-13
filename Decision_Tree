@@ -8,18 +8,42 @@ from sklearn.model_selection import KFold, cross_validate,cross_val_predict,cros
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import load_files
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer
 
 class Decision_Tree():
-    def __init__(self, X = None, y = None, X_train = None, y_train = None, X_test = None, y_test = None):
-        self.X = X
-        self.y = y
+
+    def __init__(self, X_train = None, y_train = None, X_test = None, y_test = None):
         self.X_train =  X_train
         self.y_train = y_train
         self.X_train = X_train
         self.y_train = y_train
 
-    def set_X_y(self, filepath):
-        self.X, self.y =
+    def set_X_y(self, file):
+        if(file == "imdb"):
+            print("loading")
+            reviews_train = load_files("aclImdb/train")
+            reviews_test = load_files("aclImdb/test")
+            print("setting")
+            self.X_train, self.y_train = reviews_train.data, reviews_train.target
+            self.X_test, self.y_test = reviews_test.data, reviews_test.target
+            print("replacing")
+            self.X_train = [doc.replace(b"<br />", b" ") for doc in self.X_train]
+            self.X_test = [doc.replace(b"<br />", b" ") for doc in self.X_test]
+
+        else:
+            newsgroups_train = fetch_20newsgroups(subset='train', remove=['headers', 'footers', 'quotes'])
+            newsgroups_test = fetch_20newsgroups(subset='test', remove=['headers', 'footers', 'quotes'])
+            self.X_train, self.y_train = newsgroups_train.data, newsgroups_train.target
+            self.X_test, self.y_test = newsgroups_test.data, newsgroups_test.target
+
+        # need to make sure this syntax works
+        print("vectorizing")
+        self.X_train = TfidfVectorizer(min_df=5, norm='l2').fit_transform(self.X_train)
+        self.X_test = TfidfVectorizer(min_df=5, norm='l2').fit_transform(self.X_test)
+
 
         # based on the last plot generated, can choose optimal ccp_alpha value for the model + criterion
         # (i.e. the model that minimizes the test error)
@@ -27,20 +51,22 @@ class Decision_Tree():
         # and k-fold vs OOB accuracy to comment on the accuracy
     def model_and_plot(self, criterion="gini"):
         # adopted from https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, random_state=0)
 
         clf = DecisionTreeClassifier(random_state=0, criterion=criterion)
         path = clf.cost_complexity_pruning_path(self.X_train, self.y_train)
         ccp_alphas, impurities = path.ccp_alphas, path.impurities
-
+        print(len(ccp_alphas))
         fig, ax = plt.subplots()
         ax.plot(ccp_alphas[:-1], impurities[:-1], marker='o', drawstyle="steps-post")
         ax.set_xlabel("effective alpha")
         ax.set_ylabel("total impurity of leaves")
         ax.set_title("Total Impurity vs effective alpha for training set")
 
+        plt.show()
+
         clfs = []
-        for ccp_alpha in ccp_alphas:
+        for i in range (0, len(ccp_alphas), 100):
+            ccp_alpha = ccp_alphas[i]
             clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha, criterion=criterion)
             clf.fit(self.X_train, self.y_train)
             clfs.append(clf)
@@ -77,3 +103,6 @@ class Decision_Tree():
         ax.legend()
         plt.show()
 
+dt = Decision_Tree()
+dt.set_X_y('imdb')
+dt.model_and_plot()

@@ -14,6 +14,7 @@ from sklearn.datasets import load_files
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Random_Forest():
+
     def __init__(self, X = None, y = None, X_train = None, y_train = None, X_test = None, y_test = None):
         self.X = X
         self.y = y
@@ -69,11 +70,11 @@ class Random_Forest():
         oob_error_rate = OrderedDict((label, []) for label, _ in ensemble_clfs)
 
         # Range of `n_estimators` values to explore.
-        min_estimators = 25
-        max_estimators = 175
+        min_estimators = 1
+        max_estimators = 151
 
         for label, clf in ensemble_clfs:
-            for i in range(min_estimators, max_estimators, 25):
+            for i in range(min_estimators, max_estimators, 75):
                 clf.set_params(n_estimators=i)
                 clf.fit(self.X, self.y)
 
