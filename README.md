@@ -1,9 +1,10 @@
 # AppliedML-BERT-Trees-Boost 
+Project for my graduate-level ML class (COMP 551).
 Analysis of adaboost, linear SVC, radial basis function SVM, random forests, decision trees, and BERT on the following sentimental NLP datasets - IMDb and 20Newsgroup.
 
 You can find the paper under "writeup.pdf." (last file above).
 
-Abstract
+## Abstract
 Many machine learning algorithms have been developed in recent history. We will explore the
 performance of some of the most common models in this paper given a categorical or a binary
 classification problem on text files. These models include Adaboost, linear SVC, linear regression,
