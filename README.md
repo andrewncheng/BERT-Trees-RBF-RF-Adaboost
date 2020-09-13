@@ -1,6 +1,7 @@
 # AppliedML-BERT-Trees-Boost 
 Project for my graduate-level ML class (COMP 551).
-Analysis of adaboost, linear SVC, radial basis function SVM, random forests, decision trees, and BERT on the following sentimental NLP datasets - IMDb and 20Newsgroup.
+
+We analyzed adaboost, linear SVC, radial basis function SVM, random forests, decision trees, and BERT on two sentimental NLP datasets - IMDb and 20Newsgroup.
 
 You can find the paper under "writeup.pdf." (last file above).
 
