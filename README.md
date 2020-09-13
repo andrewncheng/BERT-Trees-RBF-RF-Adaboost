@@ -1,7 +1,7 @@
 # AppliedML-BERT-Trees-Boost 
 Analysis of adaboost, linear SVC, radial basis function SVM, random forests, decision trees, and BERT on the following sentimental NLP datasets - IMDb and 20Newsgroup.
 
-You can find the paper under "writeup.pdf."
+You can find the paper under "writeup.pdf." (last file above).
 
 Abstract
 Many machine learning algorithms have been developed in recent history. We will explore the
